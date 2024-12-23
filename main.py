@@ -10,7 +10,7 @@ screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption('Space invader')
 
 #Background
-bg_surf = pygame.image.load('temp/images/bg.png')
+bg_surf = pygame.image.load('./images/bg.png')
 
 font = pygame.font.Font(None, 36)
 
@@ -22,7 +22,7 @@ class Player_Spaceship:
         self.y = y
     
     def draw(self, screen):
-        spaceship_surf = pygame.image.load('temp/images/spaceship.png').convert_alpha()
+        spaceship_surf = pygame.image.load('./images/spaceship.png').convert_alpha()
         spaceship_rect = spaceship_surf.get_rect(center = (self.x ,self.y))
         screen.blit(spaceship_surf, spaceship_rect)
 
@@ -45,7 +45,7 @@ class Enemy_Spaceship:
         self.y = y
     
     def draw(self, screen):
-        spaceship_surf = pygame.image.load('temp/images/tie.png').convert_alpha()
+        spaceship_surf = pygame.image.load('./images/tie.png').convert_alpha()
         spaceship_rect = spaceship_surf.get_rect(center = (self.x ,self.y))
         screen.blit(spaceship_surf, spaceship_rect)
 
@@ -197,7 +197,7 @@ def main():
             score_text_surf = font.render(f" Your score: {str(score)}", False, 'Yellow')
             score_text_rect = score_text_surf.get_rect(center=(width/2, height/2 + 30))
 
-            ship_deco_surf = pygame.image.load('temp/images/spaceship.png').convert_alpha()
+            ship_deco_surf = pygame.image.load('./images/spaceship.png').convert_alpha()
             ship_deco_rect = ship_deco_surf.get_rect(center=(width/2, height/2 - 60))
 
             screen.blit(game_start_text_surf, game_start_text_rect)
